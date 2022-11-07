@@ -21,37 +21,20 @@ public class Rational {
 
     public Rational(int num, int denom) {
         int gcd = getGcd(num, denom);
-        this.num = num/gcd;
-        this.denom = denom/gcd;
-
+        int negativ = 1;
+        if (((num+1.0)/denom) < 0) {
+            negativ = -1; 
+        }
+        this.num = num/gcd * negativ;
+        this.denom = denom/gcd * negativ;
 
     }
 
     public int getGcd(int num, int denom) {
-    int larger_val = Math.max(num, denom);
-    int smaller_val = Math.min(num, denom);
-    int gcd;
-    
-    while (true){
-        if (smaller_val != 0) { // If any number is zero the GCD is 1
-        int rest = larger_val % smaller_val; 
-        larger_val = smaller_val;
-        
-        if (rest == 0) // We have found the GCD!
-        {
-            gcd = smaller_val;
-            break;
-        }
-
-        smaller_val = rest;
-    }
-        else { 
-            gcd = 1;
-            break;
-        }
-    }
-    return gcd;
-}
+        if (denom==0) return num;
+        return getGcd(denom,num%denom);
+ }
+ 
     public Rational (int num) {
         this.num = num;
         this.denom = 1; 

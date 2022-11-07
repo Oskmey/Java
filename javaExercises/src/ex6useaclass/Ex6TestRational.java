@@ -27,7 +27,7 @@ public class Ex6TestRational {
         out.println(r.getNum() == 2 && r.getDenom() == 1);
         r = new Rational(4, 9);
         out.println(r.getNum() == 4 && r.getDenom() == 9);
-        r = new Rational(49, 168);
+        r = new Rational(49, 168); 
         out.println(r.getNum() == 7 && r.getDenom() == 24);  // Always shorted
         r = new Rational(20, 4);
         out.println(r.getNum() == 5 && r.getDenom() == 1);
