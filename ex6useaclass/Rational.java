@@ -16,7 +16,7 @@ public class Rational {
 
     private final int num; // rational = num / denom
     private final int denom;
-
+    
     public Rational(int num, int denom) {
         int gcd = getGcd(num, denom);
         int negativ = 1;
@@ -96,11 +96,35 @@ public class Rational {
         }
     }
 
-    public boolean equals(Rational other) {
-        return ((this.num == other.num) && (this.denom == other.denom));
+
+    public int hashCode() {
+        final int prime = 1;
+        int result = 1;
+        result = prime * result + num;
+        result = prime * result + denom;
+        return result;
     }
 
-    public List add(Rational other) {
-        return 0;
+  
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Rational other = (Rational) obj;
+        if (num != other.num)
+            return false;
+        if (denom != other.denom)
+            return false;
+        return true;
     }
+
+    public String toString() {
+        return this.num + " / " + this.denom;
+    }
+
+
+
 }

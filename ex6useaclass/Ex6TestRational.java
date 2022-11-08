@@ -58,9 +58,9 @@ public class Ex6TestRational {
         out.println(rList.contains(new Rational(2, 3)));
         System.out.println("HERE!4");
         Map<Rational, String> complexMsg = new HashMap<>();
-        complexMsg.put(new Rational(1,1), "one");
+        complexMsg.put(new Rational(1,1), "one"); 
         out.println(complexMsg.get(new Rational(1,1)).equals("one"));
-
+        out.println(new Rational(6, 1).toString());
         out.println(new Rational(6, 1).toString().equals("6 / 1"));        
     }
 }
